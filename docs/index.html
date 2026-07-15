@@ -9,21 +9,21 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --teal:#6C3CE9;--teal-dark:#4E22B8;--teal-soft:#F1EAFE;--teal-mid:#D9C6FA;
-  --lime:#D7FF3E;--lime-dark:#A8CC1E;--lime-soft:#F5FFD1;
-  --mauve:#FF4F81;--mauve-soft:#FFE1EC;
-  --white:#ffffff;--bg:#FBF6EE;
-  --ink:#17111F;--ink-2:#362B45;--ink-3:#6F6280;--ink-4:#A196AD;--ink-5:#CFC6D6;
-  --line:#ECE4F2;--line-d:#D9CCE3;
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'Space Grotesk',system-ui,sans-serif;
+  --teal:#AF1E2D;--teal-dark:#7A1420;--teal-soft:#F8E6D9;--teal-mid:#E8B4A8;
+  --lime:#E8A93B;--lime-dark:#B8811E;--lime-soft:#FBEFD1;
+  --mauve:#D6266F;--mauve-soft:#FBDCE9;
+  --white:#ffffff;--bg:#F5EAD3;
+  --ink:#1C120C;--ink-2:#4A3226;--ink-3:#7A6455;--ink-4:#A8927F;--ink-5:#D4C3B2;
+  --line:#EADFC0;--line-d:#D9C7A0;
+  --serif:'Yatra One','Baloo 2',Georgia,serif;
+  --sans:'Mukta','Baloo 2',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px;}
+body{font-family:var(--sans);background-color:var(--bg);background-image:radial-gradient(rgba(28,18,12,.05) 1px,transparent 1px);background-size:14px 14px;color:var(--ink);min-height:100vh;font-size:14px;}
 
 /* PAGE SYSTEM */
 .page{display:none;}
@@ -94,10 +94,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 /* ━━ HERO ━━ */
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .wm-logo{width:28px;height:28px;flex-shrink:0;}
-.hero{background:linear-gradient(135deg,var(--white) 55%,rgba(108,60,233,.07) 100%);border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;right:-70px;top:-90px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(108,60,233,.10) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;right:140px;bottom:-70px;width:200px;height:200px;border-radius:38% 62% 65% 35%/45% 40% 60% 55%;background:radial-gradient(circle,rgba(215,255,62,.35) 0%,transparent 72%);pointer-events:none;animation:blobfloat 8s ease-in-out infinite;}
+.hero{background:linear-gradient(135deg,var(--bg) 55%,rgba(175,30,45,.08) 100%);border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;right:-70px;top:-90px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(175,30,45,.10) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;right:140px;bottom:-70px;width:200px;height:200px;border-radius:38% 62% 65% 35%/45% 40% 60% 55%;background:radial-gradient(circle,rgba(232,169,59,.40) 0%,transparent 72%);pointer-events:none;animation:blobfloat 8s ease-in-out infinite;}
 @keyframes blobfloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(8deg);}}
+.sticker{position:absolute;background:var(--lime);border:2.5px solid var(--ink);border-radius:50%;width:96px;height:96px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-size:14px;line-height:1.3;color:var(--ink);box-shadow:4px 4px 0 var(--teal);z-index:2;}
+.sticker-hero{top:36px;right:70px;transform:rotate(-10deg);}
+.sticker-why{position:relative;display:inline-flex;width:78px;height:78px;font-size:11.5px;background:var(--mauve-soft);transform:rotate(6deg);float:right;margin:0 4px 14px 18px;box-shadow:4px 4px 0 var(--lime-dark);}
+@media(max-width:640px){.sticker-hero{display:none;}}
 .hero-in{max-width:800px;margin:0 auto;position:relative;z-index:1;}
 .hero-brand{display:flex;align-items:center;gap:22px;margin-bottom:4px;animation:heroIn .6s ease both;}
 .hero-logo-big{width:80px;height:80px;flex-shrink:0;}
@@ -498,6 +502,7 @@ footer a:hover{color:white;}
 <div class="page active" id="page-home">
 
   <section class="hero">
+    <div class="sticker sticker-hero">जोश<br>है!</div>
     <div class="hero-in">
       <div class="hero-brand">
         <svg class="hero-logo-big" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -578,7 +583,7 @@ footer a:hover{color:white;}
   <div class="why-in">
     <h2>Why Pehli Kamai</h2>
     <div class="why-sub">The real gap — and why this hire is still the smarter one</div>
-    <div class="why-quote">GenZs are not entitled. GenZs are not unprofessional. They just choose not to pretend anymore.</div>
+    <div class="why-quote"><span class="sticker sticker-why">100%<br>असली</span>GenZs are not entitled. GenZs are not unprofessional. They just choose not to pretend anymore.</div>
 
     <h3>The Real Gap</h3>
     <p>There are companies in this city that need freshers. There are thousands of young, capable people in this city who need jobs. On paper, that should be a simple match.</p>
