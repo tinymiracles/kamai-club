@@ -9,19 +9,19 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Alex+Brush&family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --teal:#B3222E;--teal-dark:#7A1620;--teal-soft:#F5DCD9;--teal-mid:#E3ABA8;
   --lime:#E8A93B;--lime-dark:#B8811E;--lime-soft:#FBEFD1;
-  --mauve:#46738A;--mauve-soft:#E1EAEE;
+  --mauve:#0E8074;--mauve-soft:#DEF0EC;
   --mustard:#E8A93B;--mustard-dark:#B8811E;--mustard-soft:#FBEFD1;
   --pink:#E85D9E;--pink-soft:#FBE1EE;
   --white:#ffffff;--bg:#F2E8D3;
   --ink:#1B1310;--ink-2:#463430;--ink-3:#786358;--ink-4:#A6947F;--ink-5:#D4C6AE;
   --line:#E3D6B8;--line-d:#D0BE93;
-  --display:'Anton',var(--serif);
+  --display:'Baloo 2',var(--serif);
   --serif:'Baloo 2',system-ui,sans-serif;
   --sans:'Mukta',system-ui,sans-serif;
 }
@@ -122,7 +122,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .hero-in{max-width:800px;margin:0 auto;position:relative;z-index:1;}
 .hero-brand{display:flex;align-items:center;gap:22px;margin-bottom:4px;animation:heroIn .6s ease both;}
 .hero-logo-big{width:80px;height:80px;flex-shrink:0;}
-.hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(44px,6vw,74px);font-weight:400;line-height:.95;letter-spacing:0;color:var(--bg);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(27,19,16,.18);}
+.hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(42px,5.6vw,68px);font-weight:800;line-height:.98;letter-spacing:-.5px;color:var(--bg);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(27,19,16,.18);}
 .hero-h1 em{font-style:normal;color:var(--mustard);-webkit-text-stroke:2px var(--ink);}
 .hero-by{font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-4);margin-top:6px;}
 .hero-tagline{font-size:clamp(15px,1.8vw,19px);font-weight:600;color:var(--teal);margin:20px 0 4px;letter-spacing:-.2px;animation:heroIn .5s .1s ease both;opacity:0;animation-fill-mode:both;}
@@ -132,7 +132,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;animation:heroIn .6s .32s ease both;opacity:0;animation-fill-mode:both;}
 .why-pk{background:var(--white);border-top:1px solid var(--line);padding:80px 40px 90px;}
 .why-in{max-width:720px;margin:0 auto;}
-.why-pk h2{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.5px;}
+.why-pk h2{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--mauve);margin-bottom:6px;letter-spacing:-.5px;}
 .why-pk .why-sub{font-size:13px;color:var(--ink-4);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px;}
 .why-quote{font-family:var(--serif);font-size:clamp(17px,2vw,22px);font-style:normal;font-weight:600;color:var(--ink);line-height:1.5;margin:0 0 40px;padding:22px 26px;border:2px solid var(--ink);background:var(--mustard-soft);border-radius:4px 20px 4px 20px;}
 .why-pk h3{font-family:var(--serif);font-size:clamp(20px,2vw,26px);font-weight:700;color:var(--ink);margin:44px 0 14px;}
@@ -149,6 +149,21 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .h-stat .l{font-size:10px;color:var(--ink-4);letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;}
 
 /* ━━ SEARCH STRIP ━━ */
+/* ━━ HOW IT WORKS ━━ */
+.how-it-works{background:var(--bg);padding:60px 40px 68px;border-bottom:1px solid var(--line-d);}
+.how-in{max-width:960px;margin:0 auto;text-align:center;}
+.how-title{font-family:var(--serif);font-weight:800;font-size:clamp(24px,3vw,34px);color:var(--mauve);letter-spacing:-.3px;margin-bottom:44px;}
+.how-steps{display:flex;align-items:flex-start;justify-content:center;gap:4px;flex-wrap:wrap;}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;width:150px;}
+.how-icon{width:66px;height:66px;border-radius:50%;background:var(--white);border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--lime);margin-bottom:14px;flex-shrink:0;}
+.how-icon svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.8;}
+.how-label{font-family:var(--serif);font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.3;}
+.how-sub{font-size:11.5px;color:var(--ink-3);margin-top:4px;line-height:1.5;}
+.how-arrow{width:64px;height:66px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:8px;}
+.how-arrow svg{filter:drop-shadow(2px 2px 0 var(--ink));}
+.how-arrow:nth-of-type(1){transform:rotate(-6deg);}
+.how-arrow:nth-of-type(2){transform:rotate(5deg);}
+@media(max-width:700px){.how-steps{flex-direction:column;align-items:center;gap:4px;}.how-arrow{transform:rotate(90deg) !important;width:50px;height:40px;margin:4px 0;}}
 .ss{background:var(--white);border-bottom:1px solid var(--line-d);padding:0 40px;position:sticky;top:64px;z-index:200;}
 .ss-in{max-width:1240px;margin:0 auto;height:58px;display:flex;align-items:stretch;gap:0;}
 .ss-cand{display:flex;align-items:center;gap:6px;padding-right:24px;margin-right:8px;flex-shrink:0;}
@@ -311,7 +326,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 
 /* ━━ ABOUT PAGE ━━ */
 .about-wrap{max-width:720px;margin:0 auto;padding:64px 40px;}
-.about-wrap h2{font-family:var(--serif);font-size:40px;font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:8px;}
+.about-wrap h2{font-family:var(--serif);font-size:40px;font-weight:700;line-height:1.1;color:var(--mauve);margin-bottom:8px;}
 .about-wrap h2 em{font-style:italic;color:var(--teal);}
 .ab-bar{width:44px;height:4px;background:var(--lime);border-radius:2px;margin-bottom:24px;}
 .ab-body{font-size:15px;line-height:1.8;color:var(--ink-3);margin-bottom:20px;}
@@ -324,7 +339,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 
 /* ━━ CONTACT PAGE ━━ */
 .contact-wrap{max-width:560px;margin:0 auto;padding:72px 40px;}
-.contact-wrap h2{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.contact-wrap h2{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--mauve);margin-bottom:6px;}
 .contact-wrap h2 em{font-style:italic;color:var(--teal);}
 .ct-bar{width:36px;height:3px;background:var(--teal);border-radius:2px;margin-bottom:24px;}
 .ct-sub{font-size:14.5px;color:var(--ink-3);margin-bottom:40px;line-height:1.75;}
@@ -562,6 +577,31 @@ footer a:hover{color:white;}
           <div class="ticket-sub">To Your Pehli Kamai</div>
         </div>
         <span class="ticket-num">No.043</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="how-in">
+      <div class="how-title">How Pehli Kamai Works</div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5l4 4L7 21l-5 1 1-5L16.5 3.5z"/></svg></div>
+          <div class="how-label">Build your profile</div>
+          <div class="how-sub">Add your skills, sector &amp; resume — takes 5 minutes</div>
+        </div>
+        <div class="how-arrow"><svg width="64" height="40" viewBox="0 0 64 40"><path d="M2 20 H50 M40 8 L54 20 L40 32" fill="none" style="stroke:var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="how-step">
+          <div class="how-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l3 3 6-7"/><circle cx="12" cy="12" r="9.5"/></svg></div>
+          <div class="how-label">Get matched</div>
+          <div class="how-sub">Employers browse verified, trained profiles</div>
+        </div>
+        <div class="how-arrow"><svg width="64" height="40" viewBox="0 0 64 40"><path d="M2 20 H50 M40 8 L54 20 L40 32" fill="none" style="stroke:var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="how-step">
+          <div class="how-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8z"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+          <div class="how-label">Land your first job</div>
+          <div class="how-sub">Real work, real income — your Pehli Kamai</div>
+        </div>
       </div>
     </div>
   </section>
