@@ -42,7 +42,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .hdr{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:300;box-shadow:0 1px 20px rgba(13,36,38,.04);}
 .hdr-in{max-width:1240px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;gap:0;}
 .brand{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;}
-.wm-name{font-family:'Alex Brush',var(--serif);font-style:normal;font-weight:400;font-size:30px;color:var(--teal);line-height:1;}
+.wm-name{font-family:'Alex Brush',var(--serif);font-style:normal;font-weight:400;font-size:38px;color:var(--teal);line-height:1;}
 .wm-name span{color:var(--teal);}
 .wm-sub{display:block;font-size:9px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--ink-4);margin-top:2px;}
 .nav-links{margin-left:32px;display:flex;gap:2px;position:relative;background:var(--bg);border-radius:20px;padding:4px;}
@@ -101,6 +101,11 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .hero::before{content:'';position:absolute;right:-70px;top:-80px;width:280px;height:280px;border-radius:50%;background:var(--lime-soft);pointer-events:none;animation:blobfloat 9s ease-in-out infinite;}
 .hero::after{content:'';position:absolute;right:150px;bottom:-50px;width:130px;height:130px;border-radius:50%;background:var(--mustard-soft);pointer-events:none;}
 .starburst{position:absolute;width:34px;height:34px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);pointer-events:none;z-index:2;}
+.nav-arrows{margin:32px 0 8px;}
+.nav-arrow{display:inline-flex;align-items:center;cursor:pointer;padding:13px 34px 13px 22px;background:var(--mustard);border:2px solid var(--ink);color:var(--ink);font-family:var(--serif);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.3px;clip-path:polygon(0 0,78% 0,100% 50%,78% 100%,0 100%);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s;user-select:none;margin-bottom:10px;}
+.nav-arrow:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+.nav-arrow.teal{background:var(--mauve-soft);}
+.nav-arrow.red{background:var(--teal-soft);}
 .ticket{display:inline-flex;align-items:center;gap:14px;background:var(--mustard-soft);border:2px solid var(--ink);border-radius:8px;padding:10px 20px;margin-top:24px;transform:rotate(-3deg);position:relative;box-shadow:3px 3px 0 var(--ink);}
 .ticket::before,.ticket::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:15px;height:15px;background:var(--bg);border:2px solid var(--ink);border-radius:50%;}
 .ticket::before{left:-9px;}
@@ -125,7 +130,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(42px,5.6vw,68px);font-weight:800;line-height:.98;letter-spacing:-.5px;color:var(--bg);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(27,19,16,.18);}
 .hero-h1 em{font-style:normal;color:var(--mustard);-webkit-text-stroke:2px var(--ink);}
 .hero-by{font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-4);margin-top:6px;}
-.hero-tagline{font-size:clamp(15px,1.8vw,19px);font-weight:600;color:var(--teal);margin:20px 0 4px;letter-spacing:-.2px;animation:heroIn .5s .1s ease both;opacity:0;animation-fill-mode:both;}
+.hero-tagline{font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--teal);margin:20px 0 4px;letter-spacing:-.2px;animation:heroIn .5s .1s ease both;opacity:0;animation-fill-mode:both;}
 .hero-bar{width:52px;height:4px;background:linear-gradient(90deg,var(--lime),var(--teal-mid));border-radius:3px;margin:18px 0;animation:heroIn .6s .15s ease both;opacity:0;animation-fill-mode:both;}
 .hero-p{font-size:15px;color:var(--ink-3);max-width:680px;line-height:1.85;animation:heroIn .6s .22s ease both;opacity:0;animation-fill-mode:both;}
 .hero-mission{font-size:14px;color:var(--ink-3);max-width:680px;line-height:1.85;margin-top:14px;animation:heroIn .6s .28s ease both;opacity:0;animation-fill-mode:both;}
@@ -326,7 +331,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 
 /* ━━ ABOUT PAGE ━━ */
 .about-wrap{max-width:720px;margin:0 auto;padding:64px 40px;}
-.about-wrap h2{font-family:var(--serif);font-size:40px;font-weight:700;line-height:1.1;color:var(--mauve);margin-bottom:8px;}
+.about-wrap h2{font-family:var(--serif);font-size:clamp(40px,5vw,58px);font-weight:800;line-height:1.05;color:var(--mauve);margin-bottom:8px;}
 .about-wrap h2 em{font-style:italic;color:var(--teal);}
 .ab-bar{width:44px;height:4px;background:var(--lime);border-radius:2px;margin-bottom:24px;}
 .ab-body{font-size:15px;line-height:1.8;color:var(--ink-3);margin-bottom:20px;}
@@ -339,7 +344,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 
 /* ━━ CONTACT PAGE ━━ */
 .contact-wrap{max-width:560px;margin:0 auto;padding:72px 40px;}
-.contact-wrap h2{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--mauve);margin-bottom:6px;}
+.contact-wrap h2{font-family:var(--serif);font-size:clamp(42px,5vw,58px);font-weight:800;color:var(--mauve);margin-bottom:6px;}
 .contact-wrap h2 em{font-style:italic;color:var(--teal);}
 .ct-bar{width:36px;height:3px;background:var(--teal);border-radius:2px;margin-bottom:24px;}
 .ct-sub{font-size:14.5px;color:var(--ink-3);margin-bottom:40px;line-height:1.75;}
@@ -565,6 +570,11 @@ footer a:hover{color:white;}
       <div class="hero-tagline">India's first fresher job portal for GenZs by GenZs</div>
       <div class="hero-bar"></div>
       <p class="hero-p">Need college students to conduct a short-term survey? A hospitality hire ready to learn on the job? An AI engineer? This is the portal for you. Our candidates span accounting, data entry, hospitality, sales, creative media, and more — all ready to work, eager to learn, and looking for their first or next step.</p>
+      <div class="nav-arrows">
+        <div class="nav-arrow" style="transform:rotate(-3deg)" onclick="document.querySelector('.ss').scrollIntoView({behavior:'smooth'})">See candidates</div><br>
+        <div class="nav-arrow teal" style="transform:rotate(2deg);margin-left:28px;" onclick="showPage('about')">Why us</div><br>
+        <div class="nav-arrow red" style="transform:rotate(-2deg);margin-left:56px;" onclick="showPage('contact')">Say hi</div>
+      </div>
       <div class="hero-stats">
         <div class="h-stat"><div class="n" id="s-tot">43</div><div class="l">Candidates</div></div>
         <div class="h-stat"><div class="n">10+</div><div class="l">Sectors</div></div>
