@@ -9,7 +9,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Rozha+One&family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -21,8 +21,8 @@
   --white:#ffffff;--bg:#F2E8D3;
   --ink:#1B1310;--ink-2:#463430;--ink-3:#786358;--ink-4:#A6947F;--ink-5:#D4C6AE;
   --line:#E3D6B8;--line-d:#D0BE93;
-  --display:'Baloo 2',var(--serif);
-  --serif:'Baloo 2',system-ui,sans-serif;
+  --display:'Rozha One',var(--serif);
+  --serif:'Rozha One','Baloo 2',system-ui,serif;
   --sans:'Mukta',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth;}
@@ -115,6 +115,9 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .sticker-2{width:88px;height:88px;border-radius:50%;background:var(--white);padding:12px;top:130px;right:56px;transform:rotate(9deg);}
 .sticker-2 svg{width:100%;height:100%;}
 .sticker-3{width:82px;height:82px;border-radius:50% 50% 50% 6px;background-color:var(--teal-dark);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 6 Q30 13 26 24 Q22 34 12 30 Q5 26 9 15 Q13 6 20 6 Z' fill='none' stroke='%23F2E8D3' stroke-width='0.8' opacity='0.35'/%3E%3C/svg%3E");background-size:40px 40px;color:var(--mustard-soft);font-size:12px;line-height:1.25;padding:4px;transform:rotate(-6deg);position:absolute;top:-10px;right:-6px;}
+.sticker-clap{position:absolute;width:118px;height:110px;background:var(--white);border-radius:14px;padding:8px;box-shadow:4px 4px 0 var(--ink);transform:rotate(7deg);top:-26px;left:-18px;z-index:3;}
+.sticker-clap svg{width:100%;height:100%;}
+@media(max-width:760px){.sticker-clap{display:none;}}
 .why-in{position:relative;}
 @media(max-width:760px){.sticker-1,.sticker-2,.sticker-3{display:none;}}
 .hero-in{max-width:800px;margin:0 auto;position:relative;z-index:1;}
@@ -669,6 +672,29 @@ footer a:hover{color:white;}
   <section class="why-pk" id="why-pk">
   <div class="why-in">
     <div class="sticker sticker-3">hustle<br>बाज़</div>
+    <div class="sticker-clap">
+      <svg viewBox="0 0 140 130">
+        <g transform="rotate(-10 20 35)">
+          <rect x="8" y="26" width="120" height="18" rx="3" fill="#1B1310"/>
+          <rect x="8" y="26" width="18" height="18" fill="#F2E8D3"/>
+          <rect x="44" y="26" width="18" height="18" fill="#F2E8D3"/>
+          <rect x="80" y="26" width="18" height="18" fill="#F2E8D3"/>
+          <rect x="116" y="26" width="12" height="18" fill="#F2E8D3"/>
+        </g>
+        <circle cx="14" cy="40" r="3" fill="#1B1310"/>
+        <rect x="8" y="42" width="124" height="80" rx="8" fill="#FBE1EE" stroke="#1B1310" stroke-width="3"/>
+        <line x1="8" y1="62" x2="132" y2="62" stroke="#1B1310" stroke-width="2"/>
+        <line x1="8" y1="104" x2="132" y2="104" stroke="#1B1310" stroke-width="2"/>
+        <line x1="52" y1="104" x2="52" y2="122" stroke="#1B1310" stroke-width="2"/>
+        <line x1="94" y1="104" x2="94" y2="122" stroke="#1B1310" stroke-width="2"/>
+        <text x="16" y="56" font-family="Mukta,sans-serif" font-size="9" font-weight="700" fill="#1B1310">STUDIO</text>
+        <text x="70" y="82" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="19" font-weight="800" fill="#1B1310">MAIN</text>
+        <text x="70" y="100" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="15" font-weight="800" fill="#1B1310">CHARACTER</text>
+        <text x="16" y="116" font-family="Mukta,sans-serif" font-size="7" font-weight="700" fill="#1B1310">ROLL</text>
+        <text x="58" y="116" font-family="Mukta,sans-serif" font-size="7" font-weight="700" fill="#1B1310">SCENE</text>
+        <text x="100" y="116" font-family="Mukta,sans-serif" font-size="7" font-weight="700" fill="#1B1310">TAKE</text>
+      </svg>
+    </div>
     <h2>Why Pehli Kamai</h2>
     <div class="why-sub">The real gap — and why this hire is still the smarter one</div>
     <div class="why-quote">GenZs are not entitled. GenZs are not unprofessional. They just choose not to pretend anymore.</div>
