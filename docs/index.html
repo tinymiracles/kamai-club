@@ -9,22 +9,24 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --teal:#FF6B4A;--teal-dark:#D9502F;--teal-soft:#FFE4DA;--teal-mid:#FFC1AC;
-  --lime:#1E9C8B;--lime-dark:#146F63;--lime-soft:#DFF5F1;
-  --mauve:#E85D9E;--mauve-soft:#FBE1EE;
-  --mustard:#F0B23D;--mustard-dark:#C98A1D;--mustard-soft:#FDF0D9;
-  --white:#ffffff;--bg:#FBF8F1;
-  --ink:#1A1A2E;--ink-2:#3A3A55;--ink-3:#6B6B85;--ink-4:#9B9BB0;--ink-5:#CFCFDC;
-  --line:#EDE7D8;--line-d:#DCD3BC;
+  --teal:#B3222E;--teal-dark:#7A1620;--teal-soft:#F5DCD9;--teal-mid:#E3ABA8;
+  --lime:#E8A93B;--lime-dark:#B8811E;--lime-soft:#FBEFD1;
+  --mauve:#46738A;--mauve-soft:#E1EAEE;
+  --mustard:#E8A93B;--mustard-dark:#B8811E;--mustard-soft:#FBEFD1;
+  --pink:#E85D9E;--pink-soft:#FBE1EE;
+  --white:#ffffff;--bg:#F2E8D3;
+  --ink:#1B1310;--ink-2:#463430;--ink-3:#786358;--ink-4:#A6947F;--ink-5:#D4C6AE;
+  --line:#E3D6B8;--line-d:#D0BE93;
+  --display:'Anton',var(--serif);
   --serif:'Baloo 2',system-ui,sans-serif;
-  --sans:'Poppins',system-ui,sans-serif;
+  --sans:'Mukta',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px;}
+body{font-family:var(--sans);background-color:var(--bg);background-image:radial-gradient(rgba(27,19,16,.06) 1px,transparent 1px);background-size:5px 5px;color:var(--ink);min-height:100vh;font-size:14px;}
 
 /* PAGE SYSTEM */
 .page{display:none;}
@@ -95,23 +97,24 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 /* ━━ HERO ━━ */
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .wm-logo{width:28px;height:28px;flex-shrink:0;}
-.hero{background:var(--bg);border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
+.hero{background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M35 12 Q50 22 44 38 Q38 54 22 48 Q10 42 16 26 Q22 12 35 12 Z' fill='none' stroke='%23B3222E' stroke-width='1.1' opacity='0.12'/%3E%3C/svg%3E");background-size:70px 70px;border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;right:-70px;top:-80px;width:280px;height:280px;border-radius:50%;background:var(--lime-soft);pointer-events:none;animation:blobfloat 9s ease-in-out infinite;}
 .hero::after{content:'';position:absolute;right:150px;bottom:-50px;width:130px;height:130px;border-radius:50%;background:var(--mustard-soft);pointer-events:none;}
+.starburst{position:absolute;width:34px;height:34px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);pointer-events:none;z-index:2;}
 @keyframes blobfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 
 /* ━━ FLAT DOODLE STICKERS ━━ */
 .sticker{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-weight:700;color:var(--white);border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);z-index:3;user-select:none;}
 .sticker-1{width:92px;height:92px;border-radius:50%;background:var(--teal);font-size:13px;line-height:1.25;padding:6px;top:26px;right:130px;transform:rotate(-8deg);}
 .sticker-2{width:60px;height:60px;border-radius:16px;background:var(--mustard);font-size:20px;top:112px;right:60px;transform:rotate(10deg);}
-.sticker-3{width:82px;height:82px;border-radius:50% 50% 50% 6px;background:var(--mauve);font-size:12px;line-height:1.25;padding:4px;transform:rotate(-6deg);position:absolute;top:-10px;right:-6px;}
+.sticker-3{width:82px;height:82px;border-radius:50% 50% 50% 6px;background-color:var(--teal-dark);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 6 Q30 13 26 24 Q22 34 12 30 Q5 26 9 15 Q13 6 20 6 Z' fill='none' stroke='%23F2E8D3' stroke-width='0.8' opacity='0.35'/%3E%3C/svg%3E");background-size:40px 40px;color:var(--mustard-soft);font-size:12px;line-height:1.25;padding:4px;transform:rotate(-6deg);position:absolute;top:-10px;right:-6px;}
 .why-in{position:relative;}
 @media(max-width:760px){.sticker-1,.sticker-2,.sticker-3{display:none;}}
 .hero-in{max-width:800px;margin:0 auto;position:relative;z-index:1;}
 .hero-brand{display:flex;align-items:center;gap:22px;margin-bottom:4px;animation:heroIn .6s ease both;}
 .hero-logo-big{width:80px;height:80px;flex-shrink:0;}
-.hero-h1{font-family:var(--serif);font-size:clamp(44px,6vw,74px);font-weight:700;line-height:1;letter-spacing:-1px;color:var(--ink);}
-.hero-h1 em{font-style:normal;color:var(--teal);}
+.hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(44px,6vw,74px);font-weight:400;line-height:.95;letter-spacing:0;color:var(--bg);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(27,19,16,.18);}
+.hero-h1 em{font-style:normal;color:var(--mustard);-webkit-text-stroke:2px var(--ink);}
 .hero-by{font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-4);margin-top:6px;}
 .hero-tagline{font-size:clamp(15px,1.8vw,19px);font-weight:600;color:var(--teal);margin:20px 0 4px;letter-spacing:-.2px;animation:heroIn .5s .1s ease both;opacity:0;animation-fill-mode:both;}
 .hero-bar{width:52px;height:4px;background:linear-gradient(90deg,var(--lime),var(--teal-mid));border-radius:3px;margin:18px 0;animation:heroIn .6s .15s ease both;opacity:0;animation-fill-mode:both;}
@@ -507,8 +510,9 @@ footer a:hover{color:white;}
 <div class="page active" id="page-home">
 
   <section class="hero">
-    <div class="sticker sticker-1">जोश<br>है ⚡</div>
+    <div class="sticker sticker-1">kamai<br>वाला</div>
     <div class="sticker sticker-2">🔥</div>
+    <div class="starburst" style="top:70px;right:52px;"></div>
     <div class="hero-in">
       <div class="hero-brand">
         <svg class="hero-logo-big" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -587,7 +591,7 @@ footer a:hover{color:white;}
 
   <section class="why-pk" id="why-pk">
   <div class="why-in">
-    <div class="sticker sticker-3">100%<br>असली</div>
+    <div class="sticker sticker-3">hustle<br>बाज़</div>
     <h2>Why Pehli Kamai</h2>
     <div class="why-sub">The real gap — and why this hire is still the smarter one</div>
     <div class="why-quote">GenZs are not entitled. GenZs are not unprofessional. They just choose not to pretend anymore.</div>
