@@ -13,7 +13,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --teal:#B3222E;--teal-dark:#7A1620;--teal-soft:#F5DCD9;--teal-mid:#E3ABA8;
+  --teal:#D6301C;--teal-dark:#9E2010;--teal-soft:#FBE0D5;--teal-mid:#F2B7A3;
   --lime:#E8A93B;--lime-dark:#B8811E;--lime-soft:#FBEFD1;
   --mauve:#0E8074;--mauve-soft:#DEF0EC;
   --mustard:#E8A93B;--mustard-dark:#B8811E;--mustard-soft:#FBEFD1;
@@ -97,7 +97,7 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 /* ━━ HERO ━━ */
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .wm-logo{width:28px;height:28px;flex-shrink:0;}
-.hero{background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M35 12 Q50 22 44 38 Q38 54 22 48 Q10 42 16 26 Q22 12 35 12 Z' fill='none' stroke='%23B3222E' stroke-width='1.1' opacity='0.12'/%3E%3C/svg%3E");background-size:70px 70px;border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
+.hero{background-color:var(--bg);background-image:radial-gradient(rgba(27,19,16,.14) 1.3px,transparent 1.3px);background-size:8px 8px;background-position:0 0;border-bottom:2px solid var(--ink);padding:72px 40px 60px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;right:-70px;top:-80px;width:280px;height:280px;border-radius:50%;background:var(--lime-soft);pointer-events:none;animation:blobfloat 9s ease-in-out infinite;}
 .hero::after{content:'';position:absolute;right:150px;bottom:-50px;width:130px;height:130px;border-radius:50%;background:var(--mustard-soft);pointer-events:none;}
 .starburst{position:absolute;width:34px;height:34px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);pointer-events:none;z-index:2;}
@@ -106,29 +106,22 @@ body{font-family:var(--sans);background-color:var(--bg);background-image:radial-
 .nav-arrow:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
 .nav-arrow.teal{background:var(--mauve-soft);}
 .nav-arrow.red{background:var(--teal-soft);}
-.ticket{display:inline-flex;align-items:center;gap:14px;background:var(--mustard-soft);border:2px solid var(--ink);border-radius:8px;padding:10px 20px;margin-top:24px;transform:rotate(-3deg);position:relative;box-shadow:3px 3px 0 var(--ink);}
-.ticket::before,.ticket::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:15px;height:15px;background:var(--bg);border:2px solid var(--ink);border-radius:50%;}
-.ticket::before{left:-9px;}
-.ticket::after{right:-9px;}
-.ticket-num{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:1px;color:var(--ink-3);writing-mode:vertical-rl;}
-.ticket-mid{border-left:2px dashed var(--ink-4);border-right:2px dashed var(--ink-4);padding:0 16px;text-align:center;}
-.ticket-title{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.5px;color:var(--teal-dark);text-transform:uppercase;line-height:1.1;}
-.ticket-sub{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--ink-3);text-transform:uppercase;margin-top:3px;}
-@media(max-width:640px){.ticket{transform:none;margin-top:18px;}}
 @keyframes blobfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 
 /* ━━ FLAT DOODLE STICKERS ━━ */
 .sticker{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-weight:700;color:var(--white);border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);z-index:3;user-select:none;}
-.sticker-1{width:92px;height:92px;border-radius:50%;background:var(--teal);font-size:13px;line-height:1.25;padding:6px;top:26px;right:130px;transform:rotate(-8deg);}
-.sticker-2{width:60px;height:60px;border-radius:16px;background:var(--mustard);font-size:20px;top:112px;right:60px;transform:rotate(10deg);}
+.sticker-1{width:104px;height:104px;border-radius:50%;background:var(--white);padding:10px;top:20px;right:120px;transform:rotate(-7deg);}
+.sticker-1 svg{width:100%;height:100%;}
+.sticker-2{width:88px;height:88px;border-radius:50%;background:var(--white);padding:12px;top:130px;right:56px;transform:rotate(9deg);}
+.sticker-2 svg{width:100%;height:100%;}
 .sticker-3{width:82px;height:82px;border-radius:50% 50% 50% 6px;background-color:var(--teal-dark);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 6 Q30 13 26 24 Q22 34 12 30 Q5 26 9 15 Q13 6 20 6 Z' fill='none' stroke='%23F2E8D3' stroke-width='0.8' opacity='0.35'/%3E%3C/svg%3E");background-size:40px 40px;color:var(--mustard-soft);font-size:12px;line-height:1.25;padding:4px;transform:rotate(-6deg);position:absolute;top:-10px;right:-6px;}
 .why-in{position:relative;}
 @media(max-width:760px){.sticker-1,.sticker-2,.sticker-3{display:none;}}
 .hero-in{max-width:800px;margin:0 auto;position:relative;z-index:1;}
 .hero-brand{display:flex;align-items:center;gap:22px;margin-bottom:4px;animation:heroIn .6s ease both;}
 .hero-logo-big{width:80px;height:80px;flex-shrink:0;}
-.hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(42px,5.6vw,68px);font-weight:800;line-height:.98;letter-spacing:-.5px;color:var(--bg);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(27,19,16,.18);}
-.hero-h1 em{font-style:normal;color:var(--mustard);-webkit-text-stroke:2px var(--ink);}
+.hero-h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(38px,5.2vw,62px);font-weight:800;line-height:1;letter-spacing:-.5px;color:var(--teal);}
+.hero-h1 em{font-style:normal;color:var(--ink);}
 .hero-by{font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-4);margin-top:6px;}
 .hero-tagline{font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--teal);margin:20px 0 4px;letter-spacing:-.2px;animation:heroIn .5s .1s ease both;opacity:0;animation-fill-mode:both;}
 .hero-bar{width:52px;height:4px;background:linear-gradient(90deg,var(--lime),var(--teal-mid));border-radius:3px;margin:18px 0;animation:heroIn .6s .15s ease both;opacity:0;animation-fill-mode:both;}
@@ -493,6 +486,14 @@ footer a:hover{color:white;}
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="halftoneDots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="1.6" fill="#1B1310"/>
+    </pattern>
+  </defs>
+</svg>
+
 <!-- ━━ HEADER ━━ -->
 <header class="hdr">
   <div class="hdr-in">
@@ -540,9 +541,25 @@ footer a:hover{color:white;}
 <div class="page active" id="page-home">
 
   <section class="hero">
-    <div class="sticker sticker-1">kamai<br>वाला</div>
-    <div class="sticker sticker-2">🔥</div>
-    <div class="starburst" style="top:70px;right:52px;"></div>
+    <div class="sticker sticker-1">
+      <svg viewBox="0 0 100 100">
+        <rect x="10" y="32" width="80" height="52" rx="8" fill="url(#halftoneDots)" stroke="#1B1310" stroke-width="3"/>
+        <rect x="36" y="18" width="26" height="16" rx="3" fill="url(#halftoneDots)" stroke="#1B1310" stroke-width="3"/>
+        <circle cx="50" cy="58" r="19" fill="#F2E8D3" stroke="#1B1310" stroke-width="3"/>
+        <circle cx="50" cy="58" r="10" fill="url(#halftoneDots)" stroke="#1B1310" stroke-width="2"/>
+        <rect x="66" y="40" width="10" height="7" rx="1.5" fill="#F2E8D3" stroke="#1B1310" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="starburst" style="top:8px;right:100px;width:26px;height:26px;"></div>
+    <div class="sticker sticker-2">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="56" r="30" fill="url(#halftoneDots)" stroke="#1B1310" stroke-width="3"/>
+        <circle cx="50" cy="56" r="10" fill="#F2E8D3" stroke="#1B1310" stroke-width="2.5"/>
+        <path d="M28 30 Q50 10 72 30" fill="none" stroke="#1B1310" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="28" cy="30" r="7" fill="#F2E8D3" stroke="#1B1310" stroke-width="3"/>
+        <circle cx="72" cy="30" r="7" fill="#F2E8D3" stroke="#1B1310" stroke-width="3"/>
+      </svg>
+    </div>
     <div class="hero-in">
       <div class="hero-brand">
         <svg class="hero-logo-big" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -579,14 +596,6 @@ footer a:hover{color:white;}
         <div class="h-stat"><div class="n" id="s-tot">43</div><div class="l">Candidates</div></div>
         <div class="h-stat"><div class="n">10+</div><div class="l">Sectors</div></div>
         <div class="h-stat"><div class="n">Mumbai</div><div class="l">Based</div></div>
-      </div>
-      <div class="ticket">
-        <span class="ticket-num">2026</span>
-        <div class="ticket-mid">
-          <div class="ticket-title">Admit One</div>
-          <div class="ticket-sub">To Your Pehli Kamai</div>
-        </div>
-        <span class="ticket-num">No.043</span>
       </div>
     </div>
   </section>
