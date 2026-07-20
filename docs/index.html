@@ -16,6 +16,7 @@
   --teal:#00838a;--teal-dark:#006068;--teal-soft:#e6f4f5;--teal-mid:#cceaeb;
   --lime:#e3ed55;--lime-dark:#c8d240;--lime-soft:#f7facc;
   --mauve:#914e72;--mauve-soft:#f5eaf0;
+  --pop:#ff4f8b;
   --white:#ffffff;--bg:#f8f9f9;
   --ink:#0d2426;--ink-2:#1e3d40;--ink-3:#4a6b6e;--ink-4:#7a9c9f;--ink-5:#b0cbcd;
   --line:#e4eced;--line-d:#c8d8da;
@@ -79,7 +80,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .lf input,.lf select{width:100%;height:38px;border:1.5px solid var(--line-d);border-radius:7px;padding:0 12px;font-family:var(--sans);font-size:13px;color:var(--ink);outline:none;background:var(--bg);transition:border .14s;}
 .lf input:focus,.lf select:focus{border-color:var(--teal);background:var(--white);}
 .lf-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.btn-lf-submit{width:100%;height:40px;background:var(--teal);border:none;border-radius:7px;color:white;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px;transition:opacity .14s;}
+.btn-lf-submit{width:100%;height:40px;background:var(--teal);border:none;border-radius:7px;color:white;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px;transition:opacity .14s,transform .14s;}
+.btn-lf-submit:hover{opacity:.9;transform:translateY(-1px);}
 .btn-lf-submit:hover{opacity:.88;}
 .lf-note{font-size:11px;color:var(--ink-4);text-align:center;margin-top:8px;line-height:1.5;}
 .login-who{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0;}
@@ -121,7 +123,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .why-cta-card h4{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;}
 .why-cta-card p{font-size:13px;line-height:1.65;margin-bottom:0;}
 @media(max-width:640px){.hero-brand{gap:10px;}}
-.h-stat{background:var(--white);border:1px solid var(--line-d);border-radius:10px;padding:14px 20px;box-shadow:0 2px 12px rgba(13,36,38,.05);}
+.h-stat{background:var(--white);border:1px solid var(--line-d);border-radius:10px;padding:14px 20px;box-shadow:0 2px 12px rgba(13,36,38,.05);transition:transform .2s,box-shadow .2s;}
+.h-stat:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(13,36,38,.1);}
 .h-stat .n{font-family:var(--serif);font-size:32px;font-style:italic;color:var(--teal);line-height:1;}
 .h-stat .l{font-size:10px;color:var(--ink-4);letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;}
 
@@ -140,7 +143,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .s-wrap{position:relative;width:200px;}
 .s-in{width:100%;height:36px;padding:0 8px 0 28px;background:transparent;border:none;border-bottom:1.5px solid rgba(0,0,0,.2);border-radius:0;font-family:var(--sans);font-size:11px;color:var(--ink);outline:none;transition:border-color .2s;}
 .s-in::placeholder{color:var(--ink-4);letter-spacing:.2px;}
-.s-in:focus{border-bottom-color:var(--ink);box-shadow:none;}
+.s-in:focus{border-bottom-color:var(--pop);box-shadow:none;}
 .s-ico{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none;}
 .loc-sel{height:36px;padding:0 6px;background:transparent;border:none;border-bottom:1.5px solid rgba(0,0,0,.2);border-radius:0;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-3);outline:none;cursor:pointer;transition:border-color .15s;}
 .loc-sel:focus{border-bottom-color:var(--ink);}
@@ -158,8 +161,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 @keyframes scroll-right{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
 
 /* ━━ PROFILE CARD ━━ */
-.pcard{min-width:190px;max-width:190px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 14px;display:flex;flex-direction:column;gap:7px;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s;flex-shrink:0;}
-.pcard:hover{box-shadow:0 8px 24px rgba(13,36,38,.12);border-color:var(--teal-mid);}
+.pcard{min-width:190px;max-width:190px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 14px;display:flex;flex-direction:column;gap:7px;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s,transform .2s;flex-shrink:0;}
+.pcard:hover{box-shadow:0 12px 28px rgba(13,36,38,.14);border-color:var(--pop);transform:translateY(-4px);}
 .pcard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--lime));opacity:0;transition:opacity .2s;}
 .pcard:hover::after{opacity:1;}
 .pc-name{font-family:var(--serif);font-size:13.5px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -296,7 +299,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .ab-stat{flex:1;min-width:120px;background:var(--white);border:1px solid var(--line-d);border-radius:10px;padding:18px 20px;}
 .ab-stat .n{font-family:var(--serif);font-size:32px;font-style:italic;color:var(--teal);}
 .ab-stat .l{font-size:11px;color:var(--ink-4);text-transform:uppercase;letter-spacing:.8px;margin-top:4px;}
-.btn-teal{height:38px;padding:0 22px;background:var(--teal);border:none;border-radius:7px;color:white;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;}
+.btn-teal{height:38px;padding:0 22px;background:var(--teal);border:none;border-radius:7px;color:white;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:opacity .14s,transform .14s;}
+.btn-teal:hover{opacity:.9;transform:translateY(-1px);}
 
 /* ━━ CONTACT PAGE ━━ */
 .contact-wrap{max-width:560px;margin:0 auto;padding:72px 40px;}
@@ -520,7 +524,7 @@ footer a:hover{color:white;}
           <div class="hero-by">by tiny miracles</div>
         </div>
       </div>
-      <div class="hero-tagline">Meet the generation everyone has an opinion about.</div>
+      <div class="hero-tagline">Meet the generation everyone has an opinion about. 👀</div>
       <div class="hero-bar"></div>
       <p class="hero-p" style="font-weight:600;color:var(--ink-2);margin-bottom:14px;">Pehli naukri. Pehla kadam. Mumbai's portal for first jobs.</p>
       <p class="hero-p">Need college students for a short-term survey? A hospitality hire ready to learn on the job? A data entry operator who'll actually show up? Our candidates span accounting, data entry, hospitality, sales, creative media, and more — freshers across Mumbai, ekdum ready to work and looking for their first, or next, step.</p>
@@ -542,7 +546,7 @@ footer a:hover{color:white;}
       <div class="ss-right">
         <div class="s-wrap">
           <svg class="s-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input class="s-in" id="q" placeholder="Search…" oninput="render()"/>
+          <input class="s-in" id="q" placeholder="Find your next hire…" oninput="render()"/>
         </div>
         <select class="loc-sel" id="loc-sel" onchange="render()">
           <option value="all">All locations</option>
@@ -557,24 +561,24 @@ footer a:hover{color:white;}
 
   <section class="why-pk">
     <div class="why-in">
-      <p>Placements are already happening. Since April, our candidates have started as data entry operators with an IT services company in Andheri, a marketing and sales executive in Nallasopara, and a sales executive with an animation studio in Dadar. First salaries earned. First careers started. Pehli kamai, literally.</p>
+      <p>Placements are already happening. Since April, our candidates have started as data entry operators with an IT services company in Andheri, a marketing and sales executive in Nallasopara, and a sales executive with an animation studio in Dadar. First salaries earned. First careers started. Pehli kamai, literally. 🎉</p>
       <p>How it works is simple. You browse profiles. You shortlist. We make the introduction — and we stay in the loop until the candidate's first day, and after.</p>
       <p>The gap was never attitude. It was access. Pehli Kamai is an initiative by Tiny Miracles, connecting Mumbai's freshers with employers ready to say yes. <a href="#" onclick="showPage('about');return false;" style="color:var(--teal);font-weight:600;">Read our story →</a></p>
 
       <div class="why-cta">
         <div class="why-cta-card teal">
-          <h4>Naukri dhoond rahe ho?</h4>
+          <h4>Naukri dhoond rahe ho? ✨</h4>
           <p>Upload your profile. Bindaas bano — khud bano.</p>
           <button class="btn-lf-submit" style="margin-top:14px;width:auto;padding:10px 22px;font-size:13px" onclick="openAdd()">Add my profile →</button>
         </div>
         <div class="why-cta-card">
-          <h4>Looking to hire?</h4>
+          <h4>Looking to hire? 🤝</h4>
           <p>Scroll through the profiles and give the candidates a call.</p>
           <button class="btn-lf-submit" style="margin-top:14px;width:auto;padding:10px 22px;font-size:13px;background:var(--ink);border-color:var(--ink)" onclick="window.scrollTo({top:0,behavior:'smooth'})">Browse candidates →</button>
         </div>
       </div>
 
-      <p style="margin-top:40px;font-style:italic;font-weight:600;text-align:center;">Mehnat hai. Mauka chahiye.</p>
+      <p style="margin-top:40px;font-style:italic;font-weight:600;text-align:center;">Mehnat hai. Mauka chahiye. 💪</p>
     </div>
   </section>
 
@@ -622,7 +626,7 @@ footer a:hover{color:white;}
     <p>The first placements went out in April 2026. Data entry operators at an IT services firm in Andheri — two of them started the same day. A marketing and sales executive in Nallasopara. A sales executive at an animation company in Dadar, earning ₹25,000 a month in his first formal role. Small numbers so far — and every single one is a first. A first salary. A first ID card. A first "I'm going to office" said at home.</p>
     <p>That's what Pehli Kamai is: the introduction. Meet the candidates, and then finish the sentence "freshers these days—" however you like. We think you'll be surprised.</p>
 
-    <p style="margin-top:32px;font-style:italic;font-weight:600;text-align:center;">Mehnat hai. Mauka chahiye.</p>
+    <p style="margin-top:32px;font-style:italic;font-weight:600;text-align:center;">Mehnat hai. Mauka chahiye. 💪</p>
 
     <div style="text-align:center;margin-top:36px;">
       <button class="btn-teal" onclick="showPage('contact')">Get in touch →</button>
@@ -1268,7 +1272,7 @@ function render(){
   });
   document.getElementById('rc').textContent=f.length;
   const g=document.getElementById('grid');
-  if(!f.length){g.innerHTML=`<div class="empty" style="padding:60px 40px"><div style="font-size:28px;color:var(--teal-mid)">✦</div><div class="empty-h">No candidates found.</div></div>`;return;}
+  if(!f.length){g.innerHTML=`<div class="empty" style="padding:60px 40px"><div style="font-size:28px;color:var(--pop)">👀</div><div class="empty-h">Nobody's matching that search yet — try another filter.</div></div>`;return;}
   const card=d=>`<div class="pcard" onclick="openP(${d.id})">
     <div class="pc-name">${d.name}</div>
     <div class="pc-sector">${d.sector}</div>
